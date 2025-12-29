@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pihu Mushroom Farming</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f7f6; color:#333; }
+    header { background:#2e7d32; color:white; padding:30px; text-align:center; }
+    section { padding:30px; max-width:1000px; margin:auto; }
+    h2 { color:#2e7d32; }
+    .card { background:white; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); margin-bottom:20px; }
+    .order-box { background:#e8f5e9; padding:20px; border-radius:10px; }
+    input, textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ccc; }
+    button { background:#2e7d32; color:white; padding:12px 20px; border:none; border-radius:8px; cursor:pointer; font-size:16px; }
+    button:hover { background:#1b5e20; }
+    footer { background:#1b5e20; color:white; text-align:center; padding:15px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🍄 पिहू मशरूम फार्मिंग 🍄</h1>
+  <p>ताजे, पौष्टिक व दर्जेदार मशरूम – थेट शेतातून तुमच्यापर्यंत</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>मशरूम बद्दल माहिती</h2>
+    <p><b>मशरूम</b> हे अत्यंत पौष्टिक अन्न आहे. यामध्ये प्रोटीन, फायबर, व्हिटॅमिन B, D आणि खनिजे मुबलक प्रमाणात असतात.</p>
+    <ul>
+      <li>आरोग्यासाठी फायदेशीर</li>
+      <li>कमी कॅलरी – वजन नियंत्रणासाठी उपयुक्त</li>
+      <li>शाकाहारी प्रोटीनचा उत्तम स्रोत</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>आम्ही कोणते मशरूम उपलब्ध करून देतो?</h2>
+    <ul>
+      <li>बटन मशरूम</li>
+      <li>ऑइस्टर मशरूम</li>
+      <li>मिल्की मशरूम</li>
+      <li>ताजे व स्वच्छ पॅकिंग</li>
+    </ul>
+  </div>
+
+  <div class="card order-box">
+    <h2>📦 ऑर्डर करा</h2>
+    <p>खालील माहिती भरा. ऑर्डरची संपूर्ण माहिती थेट WhatsApp वर पाठवली जाईल.</p>
+
+    <input type="text" id="name" placeholder="आपले नाव" required />
+    <input type="text" id="place" placeholder="आपला पत्ता / गाव" required />
+    <input type="number" id="quantity" placeholder="प्रमाण (किलो मध्ये)" required />
+    <textarea id="message" placeholder="अतिरिक्त माहिती (ऐच्छिक)"></textarea>
+
+    <button onclick="sendWhatsApp()">WhatsApp वर ऑर्डर पाठवा</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Pihu Mushroom Farming | संपर्क: 9XXXXXXXXX</p>
+</footer>
+
+<script>
+  function sendWhatsApp() {
+    var name = document.getElementById('name').value;
+    var place = document.getElementById('place').value;
+    var quantity = document.getElementById('quantity').value;
+    var message = document.getElementById('message').value;
+
+    var whatsappNumber = "91XXXXXXXXXX"; // इथे तुमचा WhatsApp नंबर टाका
+
+    var text = `🍄 *Pihu Mushroom Farming Order* 🍄%0A
+    नाव: ${name}%0A
+    पत्ता: ${place}%0A
+    प्रमाण: ${quantity} किलो%0A
+    संदेश: ${message}`;
+
+    var url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
